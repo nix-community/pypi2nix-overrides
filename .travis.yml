@@ -4,5 +4,6 @@ env:
     - PACKAGE_SET=pytest
     - PACKAGE_SET=flake8
     - PACKAGE_SET=django
+    - PACKAGE_SET=pypi2nix
 script:
   - nix-shell --command 'python run_tests.py --build-only --package-set "${PACKAGE_SET}"'

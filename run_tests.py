@@ -14,10 +14,10 @@ def parse_arguments():
         default=False,
     )
     parser.add_argument(
-        '--package-set',
-        help='A specific package set to build, e.g. flake8',
+        "--package-set",
+        help="A specific package set to build, e.g. flake8",
         type=str,
-        default=None
+        default=None,
     )
 
     return parser.parse_args()
@@ -67,7 +67,7 @@ def main():
     if args.package_set:
         tests = [args.package_set]
     else:
-        tests = ["flake8", "pytest", "django"]
+        tests = ["flake8", "pytest", "django", "pypi2nix"]
 
     for test in tests:
         test = Test(test)

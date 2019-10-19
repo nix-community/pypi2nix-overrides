@@ -23,4 +23,8 @@ makeOverrides {
   "py" = super."py".overrideDerivation (old: {
     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   });
+
+  "pytest-django" = super."pytest-django".overrideDerivation (old: {
+    buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
+  });
 }

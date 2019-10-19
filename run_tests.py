@@ -67,7 +67,7 @@ def main():
     if args.package_set:
         tests = [args.package_set]
     else:
-        tests = ["flake8", "pytest"]
+        tests = ["flake8", "pytest", "django"]
 
     for test in tests:
         test = Test(test)

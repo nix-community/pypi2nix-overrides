@@ -6,16 +6,10 @@ with builtins;
 self: super:
 
 let
-  processOverrides = name: value: nameValuePair name value;
-  filterValid =
-    overrides:
-    filterAttrs (name: value: hasAttr name super) overrides;
-  makeOverrides =
-    overrides:
-    mapAttrs' processOverrides (filterValid overrides);
+  filterValid = filterAttrs (name: value: hasAttr name super);
 in
 
-makeOverrides {
+filterValid {
   "mccabe" = super."mccabe".overrideDerivation (old: {
     buildInputs = old.buildInputs ++ [ self."pytest-runner" ];
   });

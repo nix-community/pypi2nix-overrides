@@ -13,6 +13,12 @@ def parse_arguments():
         action="store_true",
         default=False,
     )
+    parser.add_argument(
+        '--package-set',
+        help='A specific package set to build, e.g. flake8',
+        type=str,
+        default=None
+    )
 
     return parser.parse_args()
 
@@ -58,7 +64,11 @@ class Test:
 
 def main():
     args = parse_arguments()
-    tests = ["flake8", "pytest"]
+    if args.package_set:
+        tests = [args.package_set]
+    else:
+        tests = ["flake8", "pytest"]
+
     for test in tests:
         test = Test(test)
         if args.build_only:

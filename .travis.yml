@@ -1,0 +1,7 @@
+language: nix
+env:
+  matrix:
+    - PACKAGE_SET=pytest
+    - PACKAGE_SET=flake8
+script:
+  - nix-shell --command 'python run_tests.py --build-only --package-set "${PACKAGE_SET}"'

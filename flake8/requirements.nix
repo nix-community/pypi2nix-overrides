@@ -2,7 +2,7 @@
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -r requirements.txt -O ../overrides.nix -s pytest-runner
+#   pypi2nix -r requirements.txt -O ../overrides.nix --no-default-overrides -s pytest-runner
 #
 
 { pkgs ? import <nixpkgs> {},
@@ -278,7 +278,9 @@ let
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [
+        self."setuptools"
         self."setuptools-scm"
+        self."wheel"
       ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -325,6 +327,22 @@ let
       };
     };
 
+    "setuptools" = python.mkDerivation {
+      name = "setuptools-41.4.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip";
+        sha256 = "7eae782ccf36b790c21bde7d86a4f303a441cd77036b25c559a602cf5186ce4d";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pypa/setuptools";
+        license = "UNKNOWN";
+        description = "Easily download, build, install, upgrade, and uninstall Python packages";
+      };
+    };
+
     "setuptools-scm" = python.mkDerivation {
       name = "setuptools-scm-3.3.3";
       src = pkgs.fetchurl {
@@ -354,6 +372,22 @@ let
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
         description = "HTTP library with thread-safe connection pooling, file post, and more.";
+      };
+    };
+
+    "wheel" = python.mkDerivation {
+      name = "wheel-0.33.6";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/59/b0/11710a598e1e148fb7cbf9220fd2a0b82c98e94efbdecb299cb25e7f0b39/wheel-0.33.6.tar.gz";
+        sha256 = "10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pypa/wheel";
+        license = licenses.mit;
+        description = "A built-package format for Python.";
       };
     };
   };

@@ -48,7 +48,14 @@ class Test:
 
     def _generate_requirements(self):
         subprocess.run(
-            ["pypi2nix", "-r", "requirements.txt", "-O", "../overrides.nix"]
+            [
+                "pypi2nix",
+                "-r",
+                "requirements.txt",
+                "-O",
+                "../overrides.nix",
+                "--no-default-overrides",
+            ]
             + self._setup_requirements,
             check=True,
             cwd=self._directory_name,

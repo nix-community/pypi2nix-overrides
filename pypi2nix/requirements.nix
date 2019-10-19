@@ -2,7 +2,7 @@
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
-#   pypi2nix -r requirements.txt -O ../overrides.nix
+#   pypi2nix -r requirements.txt -O ../overrides.nix --no-default-overrides
 #
 
 { pkgs ? import <nixpkgs> {},
@@ -83,7 +83,10 @@ let
         sha256 = "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72";
 };
       doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+        self."setuptools"
+        self."wheel"
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://www.attrs.org/";
@@ -171,6 +174,7 @@ let
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."public"
+        self."setuptools"
         self."values"
       ];
       meta = with pkgs.stdenv.lib; {
@@ -211,6 +215,7 @@ let
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."public"
+        self."setuptools"
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/andrewp-as-is/orderdict.py";
@@ -262,7 +267,9 @@ let
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
+      propagatedBuildInputs = [
+        self."setuptools"
+      ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/looking-for-a-job/public.py";
         license = "UNKNOWN";
@@ -290,8 +297,8 @@ let
       name = "pypi2nix-2.0.0";
       src = pkgs.fetchgit {
         url = "https://github.com/nix-community/pypi2nix.git";
-        sha256 = "1fs0mp6mzbnhkyhzlfagpl8zzph7vdl8k98adsf9zv5lz0b9i1d7";
-        rev = "5149192c6b66606cef5e657548ae116f1d2ab1c6";
+        sha256 = "1p31sgipihm5dnv0wygcxxfhli7p75p8y6slxwn24w2nhsgzy9qp";
+        rev = "a586601089ccd513d379910b48f688684fb8aadb";
       };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -303,6 +310,7 @@ let
         self."packaging"
         self."parsley"
         self."setupcfg"
+        self."setuptools"
         self."toml"
       ];
       meta = with pkgs.stdenv.lib; {
@@ -324,12 +332,29 @@ let
         self."click"
         self."orderdict"
         self."public"
+        self."setuptools"
         self."write"
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/looking-for-a-job/setupcfg.py";
         license = "UNKNOWN";
         description = "UNKNOWN";
+      };
+    };
+
+    "setuptools" = python.mkDerivation {
+      name = "setuptools-41.4.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip";
+        sha256 = "7eae782ccf36b790c21bde7d86a4f303a441cd77036b25c559a602cf5186ce4d";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pypa/setuptools";
+        license = "UNKNOWN";
+        description = "Easily download, build, install, upgrade, and uninstall Python packages";
       };
     };
 
@@ -375,11 +400,28 @@ let
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."public"
+        self."setuptools"
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/looking-for-a-job/values.py";
         license = "UNKNOWN";
         description = "UNKNOWN";
+      };
+    };
+
+    "wheel" = python.mkDerivation {
+      name = "wheel-0.33.6";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/59/b0/11710a598e1e148fb7cbf9220fd2a0b82c98e94efbdecb299cb25e7f0b39/wheel-0.33.6.tar.gz";
+        sha256 = "10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/pypa/wheel";
+        license = licenses.mit;
+        description = "A built-package format for Python.";
       };
     };
 
@@ -394,6 +436,7 @@ let
       propagatedBuildInputs = [
         self."mkdir"
         self."public"
+        self."setuptools"
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/looking-for-a-job/write.py";

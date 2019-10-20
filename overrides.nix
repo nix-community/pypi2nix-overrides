@@ -21,4 +21,8 @@ filterValid {
   "pytest-django" = super."pytest-django".overrideDerivation (old: {
     buildInputs = old.buildInputs ++ [ self."setuptools-scm" ];
   });
+
+  "setuptools" = super."setuptools".overrideDerivation (old: {
+    pipInstallFlags = ["--ignore-installed"];
+  });
 }

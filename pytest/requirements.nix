@@ -223,10 +223,10 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-5.2.1";
+      name = "pytest-5.2.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/3a/3b/f839b8431582e0f4e5f98230300db70b795f467503b2cdb0bf7eb9b18351/pytest-5.2.1.tar.gz";
-        sha256 = "ca563435f4941d0cb34767301c27bc65c510cb82e90b9ecf9cb52dc2c63caaa0";
+        url = "https://files.pythonhosted.org/packages/24/67/051f7622814613980a03c9722233a4d7f8b0e21787a46b41a1057c903992/pytest-5.2.2.tar.gz";
+        sha256 = "27abc3fef618a01bebb1f0d6d303d2816a99aa87a5968ebc32fe971be91eb1e6";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [

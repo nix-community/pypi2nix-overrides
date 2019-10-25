@@ -164,26 +164,6 @@ let
       };
     };
 
-    "mkdir" = python.mkDerivation {
-      name = "mkdir-2019.4.13";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/a2/2d/b20c487f9598fc9923af5604f2fc8b7d0d8c34a760f2dd4a4a716c6969d1/mkdir-2019.4.13.tar.gz";
-        sha256 = "ae21efef763812741af5e88f2bea8a885037a557cdc8a994f8272ee0e6a9ac71";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."public"
-        self."setuptools"
-        self."values"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/looking-for-a-job/mkdir.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
-      };
-    };
-
     "nix-prefetch-github" = python.mkDerivation {
       name = "nix-prefetch-github-2.3.1";
       src = pkgs.fetchurl {
@@ -202,25 +182,6 @@ let
         homepage = "https://github.com/seppeljordan/nix-prefetch-github";
         license = "GPLv3";
         description = "Prefetch source code from github for nix build tool";
-      };
-    };
-
-    "orderdict" = python.mkDerivation {
-      name = "orderdict-2019.9.25";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/37/17/b5791077b10ded7cf26f0417fc81e3b7ffa0e26f87309243bba669ad5f57/orderdict-2019.9.25.tar.gz";
-        sha256 = "0bbca83e980b90d4c1316262edcdc8f86b3117ed508bfe7f1b48290bdf613367";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."public"
-        self."setuptools"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/andrewp-as-is/orderdict.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
       };
     };
 
@@ -259,24 +220,6 @@ let
       };
     };
 
-    "public" = python.mkDerivation {
-      name = "public-2019.4.13";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/54/4d/b40004cc6c07665e48af22cfe1e631f219bf4282e15fa76a5b6364f6885c/public-2019.4.13.tar.gz";
-        sha256 = "e1436a8a99693a9849dfe40b9158f3837b7c309c163b2d3f5b8e9fce23876db1";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."setuptools"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/looking-for-a-job/public.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
-      };
-    };
-
     "pyparsing" = python.mkDerivation {
       name = "pyparsing-2.4.2";
       src = pkgs.fetchurl {
@@ -297,8 +240,8 @@ let
       name = "pypi2nix-2.0.0";
       src = pkgs.fetchgit {
         url = "https://github.com/nix-community/pypi2nix.git";
-        sha256 = "1p31sgipihm5dnv0wygcxxfhli7p75p8y6slxwn24w2nhsgzy9qp";
-        rev = "a586601089ccd513d379910b48f688684fb8aadb";
+        sha256 = "1c7h7zmb7h328c3likpahw3bidz0wiq2sl7gsdcx5za5w6fb042m";
+        rev = "f4baf13a5af9856b97545dad91774dc79c6efce3";
       };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -309,7 +252,6 @@ let
         self."nix-prefetch-github"
         self."packaging"
         self."parsley"
-        self."setupcfg"
         self."setuptools"
         self."toml"
       ];
@@ -317,28 +259,6 @@ let
         homepage = "https://github.com/nix-community/pypi2nix";
         license = licenses.bsdOriginal;
         description = "A tool that generates nix expressions for your python packages, so you do not have to.";
-      };
-    };
-
-    "setupcfg" = python.mkDerivation {
-      name = "setupcfg-2019.4.13";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/d2/00/c5354219e9af10fc68ff2b340dda13086638407143fb59389e8bb9940f4c/setupcfg-2019.4.13.tar.gz";
-        sha256 = "9caffb32d109259cd1b2101659dc933595b14fface09b19fc039bc12eb9a42fc";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."click"
-        self."orderdict"
-        self."public"
-        self."setuptools"
-        self."write"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/looking-for-a-job/setupcfg.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
       };
     };
 
@@ -390,25 +310,6 @@ let
       };
     };
 
-    "values" = python.mkDerivation {
-      name = "values-2019.4.13";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/77/b0/d18090a912c8782bc97fe20d6b452b12f5847745726ffa80db07500e9a70/values-2019.4.13.tar.gz";
-        sha256 = "8490feebec95cbdb61ee2992355f064371a70ab0a3d9f725a5450987ebf891ad";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."public"
-        self."setuptools"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/looking-for-a-job/values.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
-      };
-    };
-
     "wheel" = python.mkDerivation {
       name = "wheel-0.33.6";
       src = pkgs.fetchurl {
@@ -422,26 +323,6 @@ let
         homepage = "https://github.com/pypa/wheel";
         license = licenses.mit;
         description = "A built-package format for Python.";
-      };
-    };
-
-    "write" = python.mkDerivation {
-      name = "write-2019.4.13";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/63/ba/5135eb62a2acab46d64c046948300fc8505ab74ed92822ba6725d4dba0e2/write-2019.4.13.tar.gz";
-        sha256 = "9d184079b7708813d340d97b5ee795303edef7a5055561784dbc928a6b5c5d39";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."mkdir"
-        self."public"
-        self."setuptools"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/looking-for-a-job/write.py";
-        license = "UNKNOWN";
-        description = "UNKNOWN";
       };
     };
   };

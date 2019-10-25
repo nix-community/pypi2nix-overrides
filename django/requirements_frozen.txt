@@ -14,7 +14,7 @@ packaging==19.2
 pluggy==0.13.0
 py==1.8.0
 pyparsing==2.4.2
-pytest==5.2.1
+pytest==5.2.2
 pytest-django==3.6.0
 pytz==2019.3
 setuptools-scm==3.3.3

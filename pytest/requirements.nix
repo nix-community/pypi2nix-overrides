@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.0)
+# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -128,7 +128,7 @@ let
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://importlib-metadata.readthedocs.io/";
-        license = "Apache Software License";
+        license = licenses.asl20;
         description = "Read metadata from Python packages";
       };
     };
@@ -163,7 +163,7 @@ let
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/packaging";
-        license = licenses.bsdOriginal;
+        license = licenses.asl20;
         description = "Core utilities for Python packages";
       };
     };
@@ -207,10 +207,10 @@ let
     };
 
     "pyparsing" = python.mkDerivation {
-      name = "pyparsing-2.4.2";
+      name = "pyparsing-2.4.5";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/7e/24/eaa8d7003aee23eda270099eeec754d7bf4399f75c6a011ef948304f66a2/pyparsing-2.4.2.tar.gz";
-        sha256 = "6f98a7b9397e206d78cc01df10131398f1c8b8510a2f4d97d9abd82e1aacdd80";
+        url = "https://files.pythonhosted.org/packages/00/32/8076fa13e832bb4dcff379f18f228e5a53412be0631808b9ca2610c0f566/pyparsing-2.4.5.tar.gz";
+        sha256 = "4ca62001be367f01bd3e92ecbb79070272a9d4964dce6a48a82ff0b8bc7e683a";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -252,17 +252,17 @@ let
     };
 
     "setuptools" = python.mkDerivation {
-      name = "setuptools-41.4.0";
+      name = "setuptools-41.6.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip";
-        sha256 = "7eae782ccf36b790c21bde7d86a4f303a441cd77036b25c559a602cf5186ce4d";
+        url = "https://files.pythonhosted.org/packages/11/0a/7f13ef5cd932a107cd4c0f3ebc9d831d9b78e1a0e8c98a098ca17b1d7d97/setuptools-41.6.0.zip";
+        sha256 = "6afa61b391dcd16cb8890ec9f66cc4015a8a31a6e1c2b4e0c464514be1a3d722";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/setuptools";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Easily download, build, install, upgrade, and uninstall Python packages";
       };
     };
@@ -284,10 +284,10 @@ let
     };
 
     "six" = python.mkDerivation {
-      name = "six-1.12.0";
+      name = "six-1.13.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz";
-        sha256 = "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73";
+        url = "https://files.pythonhosted.org/packages/94/3e/edcf6fef41d89187df7e38e868b2dd2182677922b600e880baad7749c865/six-1.13.0.tar.gz";
+        sha256 = "30f610279e8b2578cab6db20741130331735c781b56053c59c4076da27f06b66";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -348,7 +348,7 @@ let
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/jaraco/zipp";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Backport of pathlib-compatible object wrapper for zip files";
       };
     };

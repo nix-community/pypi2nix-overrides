@@ -1,6 +1,7 @@
+celery
 django
-djangorestframework
 django-cms
-pytest-django
-flake8-django
 django-debug-toolbar
+djangorestframework
+flake8-django
+pytest-django

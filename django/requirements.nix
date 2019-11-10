@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.0)
+# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -76,6 +76,24 @@ let
   python = withPackages {};
 
   generated = self: {
+    "amqp" = python.mkDerivation {
+      name = "amqp-2.5.2";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/92/1d/433541994a5a69f4ad2fff39746ddbb0bdedb0ea0d85673eb0db68a7edd9/amqp-2.5.2.tar.gz";
+        sha256 = "77f1aef9410698d20eaeac5b73a87817365f457a507d82edf292e12cbb83b08d";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [
+        self."vine"
+      ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://github.com/celery/py-amqp";
+        license = licenses.bsdOriginal;
+        description = "Low-level AMQP client for Python (fork of amqplib).";
+      };
+    };
+
     "atomicwrites" = python.mkDerivation {
       name = "atomicwrites-1.3.0";
       src = pkgs.fetchurl {
@@ -108,6 +126,43 @@ let
         homepage = "https://www.attrs.org/";
         license = licenses.mit;
         description = "Classes Without Boilerplate";
+      };
+    };
+
+    "billiard" = python.mkDerivation {
+      name = "billiard-3.6.1.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/68/1d/2aea8fbb0b1e1260a8a2e77352de2983d36d7ac01207cf14c2b9c6cc860e/billiard-3.6.1.0.tar.gz";
+        sha256 = "b8809c74f648dfe69b973c8e660bcec00603758c9db8ba89d7719f88d5f01f26";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/celery/billiard";
+        license = licenses.bsdOriginal;
+        description = "Python multiprocessing fork with improvements and bugfixes";
+      };
+    };
+
+    "celery" = python.mkDerivation {
+      name = "celery-4.3.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/a2/4b/d020836f751617e907e84753a41c92231cd4b673ff991b8ee9da52361323/celery-4.3.0.tar.gz";
+        sha256 = "4c4532aa683f170f40bd76f928b70bc06ff171a959e06e71bf35f2f9d6031ef9";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [
+        self."billiard"
+        self."kombu"
+        self."pytz"
+        self."vine"
+      ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://celeryproject.org";
+        license = licenses.bsdOriginal;
+        description = "Distributed Task Queue.";
       };
     };
 
@@ -144,10 +199,10 @@ let
     };
 
     "django" = python.mkDerivation {
-      name = "django-2.2.6";
+      name = "django-2.2.7";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c7/2c/bbd0fddf6a08456c3100b8e8b230f3288d4511985aa4e2368b0d115b5aae/Django-2.2.6.tar.gz";
-        sha256 = "a8ca1033acac9f33995eb2209a6bf18a4681c3e5269a878e9a7e0b7384ed1ca3";
+        url = "https://files.pythonhosted.org/packages/0d/05/5de305261e0a6bcd5701e2bfb5237e76303fde36f1f7c5a40ff86480ab5a/Django-2.2.7.tar.gz";
+        sha256 = "16040e1288c6c9f68c6da2fe75ebde83c0a158f6f5d54f4c5177b0c1478c5b86";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -344,10 +399,10 @@ let
     };
 
     "flake8" = python.mkDerivation {
-      name = "flake8-3.7.8";
+      name = "flake8-3.7.9";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/8d/a7/99222c9200af533c1ecb1120d99adbd1c033b57296ac5cb39d121db007a8/flake8-3.7.8.tar.gz";
-        sha256 = "19241c1cbc971b9962473e4438a2ca19749a7dd002dd1a946eaba171b4114548";
+        url = "https://files.pythonhosted.org/packages/a5/bb/7e707d8001aca96f15f684b02176ecb0575786f041293f090b44ea04f2d0/flake8-3.7.9.tar.gz";
+        sha256 = "45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -460,6 +515,25 @@ let
         homepage = "https://github.com/takluyver/intreehooks";
         license = licenses.mit;
         description = "Load a PEP 517 backend from inside the source tree";
+      };
+    };
+
+    "kombu" = python.mkDerivation {
+      name = "kombu-4.6.6";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/20/e6/bc2d9affba6138a1dc143f77fef253e9e08e238fa7c0688d917c09005e96/kombu-4.6.6.tar.gz";
+        sha256 = "1760b54b1d15a547c9a26d3598a1c8cdaf2436386ac1f5561934bc8a3cbbbd86";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [
+        self."amqp"
+        self."importlib-metadata"
+      ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://kombu.readthedocs.io";
+        license = licenses.bsdOriginal;
+        description = "Messaging library for Python.";
       };
     };
 
@@ -585,10 +659,10 @@ let
     };
 
     "pyparsing" = python.mkDerivation {
-      name = "pyparsing-2.4.2";
+      name = "pyparsing-2.4.5";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/7e/24/eaa8d7003aee23eda270099eeec754d7bf4399f75c6a011ef948304f66a2/pyparsing-2.4.2.tar.gz";
-        sha256 = "6f98a7b9397e206d78cc01df10131398f1c8b8510a2f4d97d9abd82e1aacdd80";
+        url = "https://files.pythonhosted.org/packages/00/32/8076fa13e832bb4dcff379f18f228e5a53412be0631808b9ca2610c0f566/pyparsing-2.4.5.tar.gz";
+        sha256 = "4ca62001be367f01bd3e92ecbb79070272a9d4964dce6a48a82ff0b8bc7e683a";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -630,10 +704,10 @@ let
     };
 
     "pytest-django" = python.mkDerivation {
-      name = "pytest-django-3.6.0";
+      name = "pytest-django-3.7.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/05/4d/e63752f476e172cd16e9a34ebcec926cc59c3dac8eadfc8bee655dc66acd/pytest-django-3.6.0.tar.gz";
-        sha256 = "b6c900461a6a7c450dcf11736cabc289a90f5d6f28ef74c46e32e86ffd16a4bd";
+        url = "https://files.pythonhosted.org/packages/e0/82/45077eceb48578c9717cb13b0c8d44b914519ed7a4daa6ac28f8c042f8c5/pytest-django-3.7.0.tar.gz";
+        sha256 = "17592f06d51c2ef4b7a0fb24aa32c8b6998506a03c8439606cb96db160106659";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -721,10 +795,10 @@ let
     };
 
     "setuptools" = python.mkDerivation {
-      name = "setuptools-41.4.0";
+      name = "setuptools-41.6.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip";
-        sha256 = "7eae782ccf36b790c21bde7d86a4f303a441cd77036b25c559a602cf5186ce4d";
+        url = "https://files.pythonhosted.org/packages/11/0a/7f13ef5cd932a107cd4c0f3ebc9d831d9b78e1a0e8c98a098ca17b1d7d97/setuptools-41.6.0.zip";
+        sha256 = "6afa61b391dcd16cb8890ec9f66cc4015a8a31a6e1c2b4e0c464514be1a3d722";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -753,10 +827,10 @@ let
     };
 
     "six" = python.mkDerivation {
-      name = "six-1.12.0";
+      name = "six-1.13.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz";
-        sha256 = "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73";
+        url = "https://files.pythonhosted.org/packages/94/3e/edcf6fef41d89187df7e38e868b2dd2182677922b600e880baad7749c865/six-1.13.0.tar.gz";
+        sha256 = "30f610279e8b2578cab6db20741130331735c781b56053c59c4076da27f06b66";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -797,6 +871,22 @@ let
         homepage = "https://urllib3.readthedocs.io/";
         license = licenses.mit;
         description = "HTTP library with thread-safe connection pooling, file post, and more.";
+      };
+    };
+
+    "vine" = python.mkDerivation {
+      name = "vine-1.3.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/1c/e1/79fb8046e607dd6c2ad05c9b8ebac9d0bd31d086a08f02699e96fc5b3046/vine-1.3.0.tar.gz";
+        sha256 = "133ee6d7a9016f177ddeaf191c1f58421a1dcc6ee9a42c58b34bed40e1d2cd87";
+};
+      doCheck = commonDoCheck;
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "http://github.com/celery/vine";
+        license = licenses.bsdOriginal;
+        description = "Promises, promises, promises.";
       };
     };
 

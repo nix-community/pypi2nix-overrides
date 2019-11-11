@@ -1,1 +1,1 @@
-git+https://github.com/nix-community/pypi2nix.git#egg=pypi2nix
+pypi2nix

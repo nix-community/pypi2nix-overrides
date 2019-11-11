@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.0)
+# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -103,7 +103,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl3;
+        license = licenses.lgpl2;
         description = "Universal encoding detector for Python 2 and 3";
       };
     };
@@ -119,7 +119,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "http://docutils.sourceforge.net/";
-        license = "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)";
+        license = licenses.publicDomain;
         description = "Docutils -- Python Documentation Utilities";
       };
     };
@@ -137,16 +137,16 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/takluyver/entrypoints";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Discover and load entry points from installed packages.";
       };
     };
 
     "flake8" = python.mkDerivation {
-      name = "flake8-3.7.8";
+      name = "flake8-3.7.9";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/8d/a7/99222c9200af533c1ecb1120d99adbd1c033b57296ac5cb39d121db007a8/flake8-3.7.8.tar.gz";
-        sha256 = "19241c1cbc971b9962473e4438a2ca19749a7dd002dd1a946eaba171b4114548";
+        url = "https://files.pythonhosted.org/packages/a5/bb/7e707d8001aca96f15f684b02176ecb0575786f041293f090b44ea04f2d0/flake8-3.7.9.tar.gz";
+        sha256 = "45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -183,7 +183,7 @@ let
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/takluyver/flit";
-        license = "UNKNOWN";
+        license = licenses.bsdOriginal;
         description = "A simple packaging tool for simple packages.";
       };
     };
@@ -217,7 +217,7 @@ let
       ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/takluyver/intreehooks";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Load a PEP 517 backend from inside the source tree";
       };
     };
@@ -271,10 +271,10 @@ let
     };
 
     "pytest-runner" = python.mkDerivation {
-      name = "pytest-runner-5.1";
+      name = "pytest-runner-5.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/d9/6d/4b41a74b31720e25abd4799be72d54811da4b4d0233e38b75864dcc1f7ad/pytest-runner-5.1.tar.gz";
-        sha256 = "25a013c8d84f0ca60bb01bd11913a3bcab420f601f0f236de4423074af656e7a";
+        url = "https://files.pythonhosted.org/packages/5b/82/1462f86e6c3600f2471d5f552fcc31e39f17717023df4bab712b4a9db1b3/pytest-runner-5.2.tar.gz";
+        sha256 = "96c7e73ead7b93e388c5d614770d2bae6526efd997757d3543fe17b557a0942b";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [
@@ -285,7 +285,7 @@ let
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pytest-dev/pytest-runner/";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Invoke py.test as distutils command with dependency resolution";
       };
     };
@@ -328,17 +328,17 @@ let
     };
 
     "setuptools" = python.mkDerivation {
-      name = "setuptools-41.4.0";
+      name = "setuptools-41.6.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip";
-        sha256 = "7eae782ccf36b790c21bde7d86a4f303a441cd77036b25c559a602cf5186ce4d";
+        url = "https://files.pythonhosted.org/packages/11/0a/7f13ef5cd932a107cd4c0f3ebc9d831d9b78e1a0e8c98a098ca17b1d7d97/setuptools-41.6.0.zip";
+        sha256 = "6afa61b391dcd16cb8890ec9f66cc4015a8a31a6e1c2b4e0c464514be1a3d722";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/setuptools";
-        license = "UNKNOWN";
+        license = licenses.mit;
         description = "Easily download, build, install, upgrade, and uninstall Python packages";
       };
     };

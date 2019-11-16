@@ -25,4 +25,8 @@ filterValid {
   "setuptools" = super."setuptools".overrideDerivation (old: {
     pipInstallFlags = ["--ignore-installed"];
   });
+
+  "pip" = super."pip".overrideDerivation (old: {
+    pipInstallFlags = ["--ignore-installed"];
+  });
 }

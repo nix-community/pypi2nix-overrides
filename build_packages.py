@@ -74,7 +74,7 @@ def main():
     if args.package_set:
         tests = [args.package_set]
     else:
-        tests = ["flake8", "pytest", "django", "pypi2nix"]
+        tests = ["flake8", "pytest", "django", "pypi2nix", "packaging"]
 
     for test in tests:
         test = Test(test)

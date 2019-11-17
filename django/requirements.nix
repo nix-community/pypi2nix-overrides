@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
+# generated using pypi2nix tool (version: 2.0.2.dev4+g9a1561e)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -259,10 +259,10 @@ let
     };
 
     "django-debug-toolbar" = python.mkDerivation {
-      name = "django-debug-toolbar-2.0";
+      name = "django-debug-toolbar-2.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/43/ec/2d6bad0f3a024447a4396d89d7a260fb1fdca0161be0ca6046dceb86c8b7/django-debug-toolbar-2.0.tar.gz";
-        sha256 = "17c53cd6bf4e7d69902aedf9a1d26c5d3b7369b54c5718744704f27b5a72f35d";
+        url = "https://files.pythonhosted.org/packages/23/0f/3567d62be25e3722be719e9915605a00e8b779620a2d53f2469331884629/django-debug-toolbar-2.1.tar.gz";
+        sha256 = "24c157bc6c0e1648e0a6587511ecb1b007a00a354ce716950bff2de12693e7a8";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];
@@ -675,10 +675,10 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-5.2.2";
+      name = "pytest-5.2.4";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/24/67/051f7622814613980a03c9722233a4d7f8b0e21787a46b41a1057c903992/pytest-5.2.2.tar.gz";
-        sha256 = "27abc3fef618a01bebb1f0d6d303d2816a99aa87a5968ebc32fe971be91eb1e6";
+        url = "https://files.pythonhosted.org/packages/11/68/37f8569d4151a36ceba04d1cd098d4ff6283fc5369b108d596fe8675a3ee/pytest-5.2.4.tar.gz";
+        sha256 = "ff0090819f669aaa0284d0f4aad1a6d9d67a6efdc6dd4eb4ac56b704f890a0d6";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [
@@ -859,10 +859,10 @@ let
     };
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.25.6";
+      name = "urllib3-1.25.7";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/ff/44/29655168da441dff66de03952880c6e2d17b252836ff1aa4421fba556424/urllib3-1.25.6.tar.gz";
-        sha256 = "9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86";
+        url = "https://files.pythonhosted.org/packages/ad/fc/54d62fa4fc6e675678f9519e677dfc29b8964278d75333cf142892caf015/urllib3-1.25.7.tar.gz";
+        sha256 = "f3c5fd51747d450d4dcf6f923c81f78f811aab8205fda64b0aba34a4e48b0745";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];

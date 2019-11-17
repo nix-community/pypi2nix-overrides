@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
+# generated using pypi2nix tool (version: 2.0.2.dev4+g9a1561e)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -360,10 +360,10 @@ let
     };
 
     "urllib3" = python.mkDerivation {
-      name = "urllib3-1.25.6";
+      name = "urllib3-1.25.7";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/ff/44/29655168da441dff66de03952880c6e2d17b252836ff1aa4421fba556424/urllib3-1.25.6.tar.gz";
-        sha256 = "9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86";
+        url = "https://files.pythonhosted.org/packages/ad/fc/54d62fa4fc6e675678f9519e677dfc29b8964278d75333cf142892caf015/urllib3-1.25.7.tar.gz";
+        sha256 = "f3c5fd51747d450d4dcf6f923c81f78f811aab8205fda64b0aba34a4e48b0745";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [ ];

@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
+# generated using pypi2nix tool (version: 2.0.2.dev4+g9a1561e)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:

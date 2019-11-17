@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2.dev2+g651ac01)
+# generated using pypi2nix tool (version: 2.0.2.dev4+g9a1561e)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -223,10 +223,10 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-5.2.2";
+      name = "pytest-5.2.3";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/24/67/051f7622814613980a03c9722233a4d7f8b0e21787a46b41a1057c903992/pytest-5.2.2.tar.gz";
-        sha256 = "27abc3fef618a01bebb1f0d6d303d2816a99aa87a5968ebc32fe971be91eb1e6";
+        url = "https://files.pythonhosted.org/packages/77/38/7da379b60849783123aa45c3707b7da26dd3463d9462d8b3efbf8a736ee2/pytest-5.2.3.tar.gz";
+        sha256 = "15837d2880cb94821087bc07476892ea740696b20e90288fd6c19e44b435abdb";
 };
       doCheck = commonDoCheck;
       buildInputs = commonBuildInputs ++ [

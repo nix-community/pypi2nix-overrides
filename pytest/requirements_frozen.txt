@@ -6,7 +6,7 @@ packaging==19.2
 pluggy==0.13.0
 py==1.8.0
 pyparsing==2.4.5
-pytest==5.2.2
+pytest==5.2.3
 setuptools-scm==3.3.3
 six==1.13.0
 wcwidth==0.1.7

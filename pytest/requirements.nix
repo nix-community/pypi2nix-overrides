@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2.dev4+g9a1561e)
+# generated using pypi2nix tool (version: 2.0.2)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -76,22 +76,6 @@ let
   python = withPackages {};
 
   generated = self: {
-    "atomicwrites" = python.mkDerivation {
-      name = "atomicwrites-1.3.0";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/ec/0f/cd484ac8820fed363b374af30049adc8fd13065720fd4f4c6be8a2309da7/atomicwrites-1.3.0.tar.gz";
-        sha256 = "75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6";
-};
-      doCheck = commonDoCheck;
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/untitaker/python-atomicwrites";
-        license = licenses.mit;
-        description = "Atomic file writes.";
-      };
-    };
-
     "attrs" = python.mkDerivation {
       name = "attrs-19.3.0";
       src = pkgs.fetchurl {
@@ -99,6 +83,7 @@ let
         sha256 = "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72";
 };
       doCheck = commonDoCheck;
+      format = "pyproject";
       buildInputs = commonBuildInputs ++ [
         self."setuptools"
         self."wheel"
@@ -112,12 +97,13 @@ let
     };
 
     "importlib-metadata" = python.mkDerivation {
-      name = "importlib-metadata-0.23";
+      name = "importlib-metadata-1.2.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/5d/44/636bcd15697791943e2dedda0dbe098d8530a38d113b202817133e0b06c0/importlib_metadata-0.23.tar.gz";
-        sha256 = "aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26";
+        url = "https://files.pythonhosted.org/packages/9b/42/86a31ce5fd7e3c5fc9071cec95d0aab11deb2fd63eed27315f520d120bfd/importlib_metadata-1.2.0.tar.gz";
+        sha256 = "41e688146d000891f32b1669e8573c57e39e5060e7f5f647aa617cd9a9568278";
 };
       doCheck = commonDoCheck;
+      format = "pyproject";
       buildInputs = commonBuildInputs ++ [
         self."setuptools"
         self."setuptools-scm"
@@ -134,12 +120,13 @@ let
     };
 
     "more-itertools" = python.mkDerivation {
-      name = "more-itertools-7.2.0";
+      name = "more-itertools-8.0.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c2/31/45f61c8927c9550109f1c4b99ba3ca66d328d889a9c9853a808bff1c9fa0/more-itertools-7.2.0.tar.gz";
-        sha256 = "409cd48d4db7052af495b09dec721011634af3753ae1ef92d2b32f73a745f832";
+        url = "https://files.pythonhosted.org/packages/4e/b2/e9e512cccde6c54bf66a8e5820a2af779eb8235028627002ca90d4f75bea/more-itertools-8.0.2.tar.gz";
+        sha256 = "b84b238cce0d9adad5ed87e745778d20a3f8487d0f0cb8b8a586816c7496458d";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -156,6 +143,7 @@ let
         sha256 = "28b924174df7a2fa32c1953825ff29c61e2f5e082343165438812f00d3a7fc47";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [
         self."pyparsing"
@@ -169,12 +157,13 @@ let
     };
 
     "pluggy" = python.mkDerivation {
-      name = "pluggy-0.13.0";
+      name = "pluggy-0.13.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/d7/9d/ae82a5facf2dd89f557a33ad18eb68e5ac7b7a75cf52bf6a208f29077ecf/pluggy-0.13.0.tar.gz";
-        sha256 = "fa5fa1622fa6dd5c030e9cad086fa19ef6a0cf6d7a2d12318e10cb49d6d68f34";
+        url = "https://files.pythonhosted.org/packages/f8/04/7a8542bed4b16a65c2714bf76cf5a0b026157da7f75e87cc88774aa10b14/pluggy-0.13.1.tar.gz";
+        sha256 = "15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0";
 };
       doCheck = commonDoCheck;
+      format = "pyproject";
       buildInputs = commonBuildInputs ++ [
         self."setuptools"
         self."setuptools-scm"
@@ -197,6 +186,7 @@ let
         sha256 = "dc639b046a6e2cff5bbe40194ad65936d6ba360b52b3c3fe1d08a82dd50b5e53";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -213,6 +203,7 @@ let
         sha256 = "4ca62001be367f01bd3e92ecbb79070272a9d4964dce6a48a82ff0b8bc7e683a";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -223,19 +214,19 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-5.2.3";
+      name = "pytest-5.3.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/77/38/7da379b60849783123aa45c3707b7da26dd3463d9462d8b3efbf8a736ee2/pytest-5.2.3.tar.gz";
-        sha256 = "15837d2880cb94821087bc07476892ea740696b20e90288fd6c19e44b435abdb";
+        url = "https://files.pythonhosted.org/packages/58/76/45329365ccc901e954cbc6d4c4a7cb6162600a34ed060a6b7b4f127d8183/pytest-5.3.1.tar.gz";
+        sha256 = "f67403f33b2b1d25a6756184077394167fe5e2f9d8bdaab30707d19ccec35427";
 };
       doCheck = commonDoCheck;
+      format = "pyproject";
       buildInputs = commonBuildInputs ++ [
         self."setuptools"
         self."setuptools-scm"
         self."wheel"
       ];
       propagatedBuildInputs = [
-        self."atomicwrites"
         self."attrs"
         self."importlib-metadata"
         self."more-itertools"
@@ -252,12 +243,13 @@ let
     };
 
     "setuptools" = python.mkDerivation {
-      name = "setuptools-41.6.0";
+      name = "setuptools-42.0.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/11/0a/7f13ef5cd932a107cd4c0f3ebc9d831d9b78e1a0e8c98a098ca17b1d7d97/setuptools-41.6.0.zip";
-        sha256 = "6afa61b391dcd16cb8890ec9f66cc4015a8a31a6e1c2b4e0c464514be1a3d722";
+        url = "https://files.pythonhosted.org/packages/f7/b6/5b98441b6749ea1db1e41e5e6e7a93cbdd7ffd45e11fe1b22d45884bc777/setuptools-42.0.2.zip";
+        sha256 = "c5b372090d7c8709ce79a6a66872a91e518f7d65af97fca78135e1cb10d4b940";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -274,6 +266,7 @@ let
         sha256 = "bd25e1fb5e4d603dcf490f1fde40fb4c595b357795674c3e5cb7f6217ab39ea5";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -290,6 +283,7 @@ let
         sha256 = "30f610279e8b2578cab6db20741130331735c781b56053c59c4076da27f06b66";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -306,6 +300,7 @@ let
         sha256 = "3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -322,6 +317,7 @@ let
         sha256 = "10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646";
 };
       doCheck = commonDoCheck;
+      format = "setuptools";
       buildInputs = commonBuildInputs ++ [ ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
@@ -338,6 +334,7 @@ let
         sha256 = "3718b1cbcd963c7d4c5511a8240812904164b7f381b647143a89d3b98f9bcd8e";
 };
       doCheck = commonDoCheck;
+      format = "pyproject";
       buildInputs = commonBuildInputs ++ [
         self."setuptools"
         self."setuptools-scm"

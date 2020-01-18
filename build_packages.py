@@ -36,6 +36,13 @@ class Test:
         self._generate_requirements()
         self.build_from_nix_expression()
 
+    def build_from_nix_expression(self):
+        subprocess.run(
+            ["nix", "build", "-f", "requirements.nix"],
+            check=True,
+            cwd=self._directory_name,
+        )
+
     def _read_setup_requirements(self):
         self._setup_requirements = []
         setup_requirements_file = os.path.join(
@@ -60,13 +67,6 @@ class Test:
                 "--no-default-overrides",
             ]
             + self._setup_requirements,
-            check=True,
-            cwd=self._directory_name,
-        )
-
-    def build_from_nix_expression(self):
-        subprocess.run(
-            ["nix", "build", "-f", "requirements.nix"],
             check=True,
             cwd=self._directory_name,
         )

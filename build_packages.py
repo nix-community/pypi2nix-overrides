@@ -5,6 +5,9 @@ import os.path
 import subprocess
 
 
+PACKAGE_SETS = ["flake8", "pytest", "django", "pypi2nix", "packaging"]
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -72,9 +75,12 @@ class Test:
 def main():
     args = parse_arguments()
     if args.package_set:
+        assert (
+            args.package_set in PACKAGE_SETS
+        ), f"{args.package_set} not in {PACKAGE_SETS}"
         tests = [args.package_set]
     else:
-        tests = ["flake8", "pytest", "django", "pypi2nix", "packaging"]
+        tests = PACKAGE_SETS
 
     for test in tests:
         test = Test(test)

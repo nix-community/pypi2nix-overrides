@@ -5,10 +5,10 @@ flit==2.2.0
 flit-core==2.2.0
 idna==2.8
 intreehooks==1.0
-packaging==20.0
+packaging==20.1
 pyparsing==2.4.6
 pytoml==0.1.21
 requests==2.22.0
-setuptools-scm==3.4.1
+setuptools-scm==3.4.3
 six==1.14.0
-urllib3==1.25.7
+urllib3==1.25.8

@@ -137,10 +137,10 @@ let
     };
 
     "packaging" = python.mkDerivation {
-      name = "packaging-20.0";
+      name = "packaging-20.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/c7/cf/d84b72480a556d9bd4a191a91b0a8ea71cb48e6f6132f12d9d365c51bdb6/packaging-20.0.tar.gz";
-        sha256 = "fe1d8331dfa7cc0a883b49d75fc76380b2ab2734b220fbb87d774e4fd4b851f8";
+        url = "https://files.pythonhosted.org/packages/7b/d5/199f982ae38231995276421377b72f4a25d8251f4fa56f6be7cfcd9bb022/packaging-20.1.tar.gz";
+        sha256 = "e665345f9eef0c621aa0bf2f8d78cf6d21904eef16a93f020240b704a57f1334";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
@@ -214,10 +214,10 @@ let
     };
 
     "pytest" = python.mkDerivation {
-      name = "pytest-5.3.3";
+      name = "pytest-5.3.4";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/eb/3d/19bac795b6e60f4d6127227d4e11c31f8d9555de5e1f1a5e01ebad1d2ccf/pytest-5.3.3.tar.gz";
-        sha256 = "f5d3d0e07333119fe7d4af4ce122362dc4053cdd34a71d2766290cf5369c64ad";
+        url = "https://files.pythonhosted.org/packages/eb/9c/8bf2a5e1a84e6b6d9a255ed1cda5d4b339699e9b1d95ed9f811209d588f8/pytest-5.3.4.tar.gz";
+        sha256 = "1d122e8be54d1a709e56f82e2d85dcba3018313d64647f38a91aec88c239b600";
 };
       doCheck = commonDoCheck;
       format = "pyproject";
@@ -243,10 +243,10 @@ let
     };
 
     "setuptools" = python.mkDerivation {
-      name = "setuptools-45.0.0";
+      name = "setuptools-45.1.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/fd/76/3c7f726ed5c582019937f178d7478ce62716b7e8263344f1684cbe11ab3e/setuptools-45.0.0.zip";
-        sha256 = "c46d9c8f2289535457d36c676b541ca78f7dcb736b97d02f50d17f7f15b583cc";
+        url = "https://files.pythonhosted.org/packages/42/3e/2464120172859e5d103e5500315fb5555b1e908c0dacc73d80d35a9480ca/setuptools-45.1.0.zip";
+        sha256 = "91f72d83602a6e5e4a9e4fe296e27185854038d7cbda49dcd7006c4d3b3b89d5";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
@@ -260,10 +260,10 @@ let
     };
 
     "setuptools-scm" = python.mkDerivation {
-      name = "setuptools-scm-3.4.1";
+      name = "setuptools-scm-3.4.3";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/9a/29/d8f9b0ddb3b9cb9da4de7fdd5f85bc598f774f22161cf72e5fe47207c8ea/setuptools_scm-3.4.1.tar.gz";
-        sha256 = "6aaa6fbeb81d0899d6f473b0d79efccdd9a28f33192f479d5d2bd92b8eb75090";
+        url = "https://files.pythonhosted.org/packages/fe/bd/bc2fe0b14ce234bb5e2af5f3b574c5a8ef1b7845bfa41e7cf69a78627ec8/setuptools_scm-3.4.3.tar.gz";
+        sha256 = "26b8a108783cd88f4b15ff1f0f347d6b476db25d0c226159b835d713f9487320";
 };
       doCheck = commonDoCheck;
       format = "pyproject";
@@ -293,6 +293,23 @@ let
         homepage = "https://github.com/benjaminp/six";
         license = licenses.mit;
         description = "Python 2 and 3 compatibility utilities";
+      };
+    };
+
+    "toml" = python.mkDerivation {
+      name = "toml-0.10.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/b9/19/5cbd78eac8b1783671c40e34bb0fa83133a06d340a38b55c645076d40094/toml-0.10.0.tar.gz";
+        sha256 = "229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c";
+};
+      doCheck = commonDoCheck;
+      format = "setuptools";
+      buildInputs = commonBuildInputs ++ [ ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/uiri/toml";
+        license = licenses.mit;
+        description = "Python Library for Tom's Obvious, Minimal Language";
       };
     };
 
@@ -331,10 +348,10 @@ let
     };
 
     "zipp" = python.mkDerivation {
-      name = "zipp-1.0.0";
+      name = "zipp-2.0.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/d4/cd/ef86396dce8910413b6ca1ef31ec09367c47e15fc1a12def2cc8ae134dea/zipp-1.0.0.tar.gz";
-        sha256 = "d38fbe01bbf7a3593a32bc35a9c4453c32bc42b98c377f9bff7e9f8da157786c";
+        url = "https://files.pythonhosted.org/packages/69/d2/daa94177e934b0b1b0780f5c856c41c248a88b2f43c046ae23afb0116ec0/zipp-2.0.1.tar.gz";
+        sha256 = "b338014b9bc7102ca69e0fb96ed07215a8954d2989bc5d83658494ab2ba634af";
 };
       doCheck = commonDoCheck;
       format = "pyproject";

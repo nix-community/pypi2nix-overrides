@@ -5,5 +5,5 @@ in
 
 nixpkgs.stdenv.mkDerivation {
   name = "dev-env";
-  buildInputs = [ pythonPackages.interpreter ];
+  buildInputs = [ pythonPackages.interpreter nixpkgs.nixfmt];
 }

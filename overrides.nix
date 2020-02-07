@@ -23,6 +23,9 @@ in filterValid {
   "pip" = super."pip".overrideDerivation
     (old: { pipInstallFlags = [ "--ignore-installed" ]; });
 
+  "wheel" = super."wheel".overrideDerivation
+    (old: { pipInstallFlags = [ "--ignore-installed" ]; });
+
   "zipp" = super."zipp".overrideDerivation
     (old: { buildInputs = old.buildInputs ++ [ self."toml" ]; });
 }

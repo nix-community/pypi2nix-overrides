@@ -17,3 +17,13 @@ How?
 ====
 
 ``pypi2nix`` will include this overrides by default.
+
+Contributions
+=============
+
+If you would like to contribute to ``pypi2nix-overrides`` check out
+the repository at
+[github.com](https://github.com/nix-community/pypi2nix-overrides).
+Issues and pull requests are very welcome.  When you submit a pull
+request please add your name to the contributers file in the code
+repository.

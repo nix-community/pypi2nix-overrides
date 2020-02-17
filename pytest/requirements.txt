@@ -1,1 +1,17 @@
+oejskit
 pytest
+pytest-bdd
+pytest-black
+pytest-cov
+pytest-django
+pytest-flake8
+pytest-flakes
+pytest-instafail
+pytest-pep8
+pytest-timeout
+pytest-twisted
+
+# failes to build but is recommended by pytest website
+# https://docs.pytest.org/en/latest/plugins.html#installing-and-using-plugins
+#
+# pytest-xdist

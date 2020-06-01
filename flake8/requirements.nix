@@ -1,4 +1,4 @@
-# generated using pypi2nix tool (version: 2.0.2)
+# generated using pypi2nix tool (version: 2.0.4)
 # See more at: https://github.com/nix-community/pypi2nix
 #
 # COMMAND:
@@ -76,87 +76,19 @@ let
   python = withPackages {};
 
   generated = self: {
-    "certifi" = python.mkDerivation {
-      name = "certifi-2019.11.28";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/41/bf/9d214a5af07debc6acf7f3f257265618f1db242a3f8e49a9b516f24523a6/certifi-2019.11.28.tar.gz";
-        sha256 = "25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://certifi.io/";
-        license = licenses.mpl20;
-        description = "Python package for providing Mozilla's CA Bundle.";
-      };
-    };
-
-    "chardet" = python.mkDerivation {
-      name = "chardet-3.0.4";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz";
-        sha256 = "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/chardet/chardet";
-        license = licenses.lgpl2;
-        description = "Universal encoding detector for Python 2 and 3";
-      };
-    };
-
-    "docutils" = python.mkDerivation {
-      name = "docutils-0.16";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/2f/e0/3d435b34abd2d62e8206171892f174b180cd37b09d57b924ca5c2ef2219d/docutils-0.16.tar.gz";
-        sha256 = "c2de3a60e9e7d07be26b7f2b00ca0309c207e06c100f9cc2a94931fc75a478fc";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://docutils.sourceforge.net/";
-        license = licenses.publicDomain;
-        description = "Docutils -- Python Documentation Utilities";
-      };
-    };
-
-    "entrypoints" = python.mkDerivation {
-      name = "entrypoints-0.3";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/b4/ef/063484f1f9ba3081e920ec9972c96664e2edb9fdc3d8669b0e3b8fc0ad7c/entrypoints-0.3.tar.gz";
-        sha256 = "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451";
-};
-      doCheck = commonDoCheck;
-      format = "pyproject";
-      buildInputs = commonBuildInputs ++ [
-        self."flit"
-      ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/takluyver/entrypoints";
-        license = licenses.mit;
-        description = "Discover and load entry points from installed packages.";
-      };
-    };
-
     "flake8" = python.mkDerivation {
-      name = "flake8-3.7.9";
+      name = "flake8-3.8.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/a5/bb/7e707d8001aca96f15f684b02176ecb0575786f041293f090b44ea04f2d0/flake8-3.7.9.tar.gz";
-        sha256 = "45681a117ecc81e870cbf1262835ae4af5e7a8b08e40b944a8a6e6b895914cfb";
+        url = "https://files.pythonhosted.org/packages/10/b1/ef9620afac4a8794e631e54bbcd2f70257dee04693ea8fd959d57b89714e/flake8-3.8.2.tar.gz";
+        sha256 = "c69ac1668e434d37a2d2880b3ca9aafd54b3a10a3ac1ab101d22f29e29cf8634";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [
-        self."entrypoints"
+        self."importlib-metadata"
         self."mccabe"
         self."pycodestyle"
         self."pyflakes"
@@ -164,88 +96,30 @@ let
       meta = with pkgs.stdenv.lib; {
         homepage = "https://gitlab.com/pycqa/flake8";
         license = licenses.mit;
-        description = "the modular source code checker: pep8, pyflakes and co";
+        description = "the modular source code checker: pep8 pyflakes and co";
       };
     };
 
-    "flit" = python.mkDerivation {
-      name = "flit-2.2.0";
+    "importlib-metadata" = python.mkDerivation {
+      name = "importlib-metadata-1.6.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/35/87/a92625dc5c81cf1608553b27b5c216bdc1e678ea6738a3a8a69ee2e5fb51/flit-2.2.0.tar.gz";
-        sha256 = "a273dc2a5ab1f42f0e02878347d94f5462c42cbe232a5014b6778c9e5975327f";
+        url = "https://files.pythonhosted.org/packages/b4/1b/baab42e3cd64c9d5caac25a9d6c054f8324cdc38975a44d600569f1f7158/importlib_metadata-1.6.0.tar.gz";
+        sha256 = "34513a8a0c4962bc66d35b359558fd8a5e10cd472d37aec5f66858addef32c1e";
 };
       doCheck = commonDoCheck;
       format = "pyproject";
       buildInputs = commonBuildInputs ++ [
-        self."flit-core"
+        self."setuptools"
+        self."setuptools-scm"
+        self."wheel"
       ];
       propagatedBuildInputs = [
-        self."docutils"
-        self."flit-core"
-        self."pytoml"
-        self."requests"
+        self."zipp"
       ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/takluyver/flit";
-        license = licenses.bsdOriginal;
-        description = "A simple packaging tool for simple packages.";
-      };
-    };
-
-    "flit-core" = python.mkDerivation {
-      name = "flit-core-2.2.0";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/77/72/5dda5dc417a4e702e0d7e4a77e9802792a0e4a2daec2aeed915ead7db477/flit_core-2.2.0.tar.gz";
-        sha256 = "4efb8bffc1a04d8e550e877f0c9acf53109a021cc27c2a89b1b467715dc1d657";
-};
-      doCheck = commonDoCheck;
-      format = "pyproject";
-      buildInputs = commonBuildInputs ++ [
-        self."intreehooks"
-      ];
-      propagatedBuildInputs = [
-        self."pytoml"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/takluyver/flit";
-        license = licenses.bsdOriginal;
-        description = "Distribution-building parts of Flit. See flit package for more information";
-      };
-    };
-
-    "idna" = python.mkDerivation {
-      name = "idna-2.8";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/ad/13/eb56951b6f7950cadb579ca166e448ba77f9d24efc03edd7e55fa57d04b7/idna-2.8.tar.gz";
-        sha256 = "c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/kjd/idna";
-        license = licenses.bsdOriginal;
-        description = "Internationalized Domain Names in Applications (IDNA)";
-      };
-    };
-
-    "intreehooks" = python.mkDerivation {
-      name = "intreehooks-1.0";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/f9/a5/5dacebf93232a847970921af2b020f9f2a8e0064e3a97727cd38efc77ba0/intreehooks-1.0.tar.gz";
-        sha256 = "87e600d3b16b97ed219c078681260639e77ef5a17c0e0dbdd5a302f99b4e34e1";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."pytoml"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/takluyver/intreehooks";
-        license = licenses.mit;
-        description = "Load a PEP 517 backend from inside the source tree";
+        homepage = "http://importlib-metadata.readthedocs.io/";
+        license = licenses.asl20;
+        description = "Read metadata from Python packages";
       };
     };
 
@@ -257,7 +131,9 @@ let
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pycqa/mccabe";
@@ -267,14 +143,16 @@ let
     };
 
     "pycodestyle" = python.mkDerivation {
-      name = "pycodestyle-2.5.0";
+      name = "pycodestyle-2.6.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/1c/d1/41294da5915f4cae7f4b388cea6c2cd0d6cd53039788635f6875dfe8c72f/pycodestyle-2.5.0.tar.gz";
-        sha256 = "e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c";
+        url = "https://files.pythonhosted.org/packages/bb/82/0df047a5347d607be504ad5faa255caa7919562962b934f9372b157e8a70/pycodestyle-2.6.0.tar.gz";
+        sha256 = "c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://pycodestyle.readthedocs.io/";
@@ -284,14 +162,16 @@ let
     };
 
     "pyflakes" = python.mkDerivation {
-      name = "pyflakes-2.1.1";
+      name = "pyflakes-2.2.0";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/52/64/87303747635c2988fcaef18af54bfdec925b6ea3b80bcd28aaca5ba41c9e/pyflakes-2.1.1.tar.gz";
-        sha256 = "d976835886f8c5b31d47970ed689944a0262b5f3afa00a5a7b4dc81e5449f8a2";
+        url = "https://files.pythonhosted.org/packages/f1/e2/e02fc89959619590eec0c35f366902535ade2728479fc3082c8af8840013/pyflakes-2.2.0.tar.gz";
+        sha256 = "35b2d75ee967ea93b55750aa9edbbf72813e06a66ba54438df2cfac9e3c27fc8";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/PyCQA/pyflakes";
@@ -321,54 +201,17 @@ let
       };
     };
 
-    "pytoml" = python.mkDerivation {
-      name = "pytoml-0.1.21";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/f4/ba/98ee2054a2d7b8bebd367d442e089489250b6dc2aee558b000e961467212/pytoml-0.1.21.tar.gz";
-        sha256 = "8eecf7c8d0adcff3b375b09fe403407aa9b645c499e5ab8cac670ac4a35f61e7";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [ ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "https://github.com/avakar/pytoml";
-        license = licenses.mit;
-        description = "A parser for TOML-0.4.0";
-      };
-    };
-
-    "requests" = python.mkDerivation {
-      name = "requests-2.22.0";
-      src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/01/62/ddcf76d1d19885e8579acb1b1df26a852b03472c0e46d2b959a714c90608/requests-2.22.0.tar.gz";
-        sha256 = "11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4";
-};
-      doCheck = commonDoCheck;
-      format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
-      propagatedBuildInputs = [
-        self."certifi"
-        self."chardet"
-        self."idna"
-        self."urllib3"
-      ];
-      meta = with pkgs.stdenv.lib; {
-        homepage = "http://python-requests.org";
-        license = licenses.asl20;
-        description = "Python HTTP for Humans.";
-      };
-    };
-
     "setuptools" = python.mkDerivation {
-      name = "setuptools-45.1.0";
+      name = "setuptools-47.1.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/42/3e/2464120172859e5d103e5500315fb5555b1e908c0dacc73d80d35a9480ca/setuptools-45.1.0.zip";
-        sha256 = "91f72d83602a6e5e4a9e4fe296e27185854038d7cbda49dcd7006c4d3b3b89d5";
+        url = "https://files.pythonhosted.org/packages/25/bf/a37e89d3148221fedd4def62bb68749041d79f3840d58a7943f81a6f6c6e/setuptools-47.1.1.zip";
+        sha256 = "145fa62b9d7bb544fce16e9b5a9bf4ab2032d2f758b7cd674af09a92736aff74";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/setuptools";
@@ -378,10 +221,10 @@ let
     };
 
     "setuptools-scm" = python.mkDerivation {
-      name = "setuptools-scm-3.4.3";
+      name = "setuptools-scm-4.1.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/fe/bd/bc2fe0b14ce234bb5e2af5f3b574c5a8ef1b7845bfa41e7cf69a78627ec8/setuptools_scm-3.4.3.tar.gz";
-        sha256 = "26b8a108783cd88f4b15ff1f0f347d6b476db25d0c226159b835d713f9487320";
+        url = "https://files.pythonhosted.org/packages/cd/66/fa77e809b7cb1c2e14b48c7fc8a8cd657a27f4f9abb848df0c967b6e4e11/setuptools_scm-4.1.2.tar.gz";
+        sha256 = "a8994582e716ec690f33fec70cca0f85bd23ec974e3f783233e4879090a7faa8";
 };
       doCheck = commonDoCheck;
       format = "pyproject";
@@ -389,7 +232,9 @@ let
         self."setuptools"
         self."wheel"
       ];
-      propagatedBuildInputs = [ ];
+      propagatedBuildInputs = [
+        self."setuptools"
+      ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/setuptools_scm/";
         license = licenses.mit;
@@ -397,44 +242,69 @@ let
       };
     };
 
-    "urllib3" = python.mkDerivation {
-      name = "urllib3-1.25.8";
+    "toml" = python.mkDerivation {
+      name = "toml-0.10.1";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/09/06/3bc5b100fe7e878d3dee8f807a4febff1a40c213d2783e3246edde1f3419/urllib3-1.25.8.tar.gz";
-        sha256 = "87716c2d2a7121198ebcb7ce7cccf6ce5e9ba539041cfbaeecfb641dc0bf6acc";
+        url = "https://files.pythonhosted.org/packages/da/24/84d5c108e818ca294efe7c1ce237b42118643ce58a14d2462b3b2e3800d5/toml-0.10.1.tar.gz";
+        sha256 = "926b612be1e5ce0634a2ca03470f95169cf16f939018233a670519cb4ac58b0f";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
-        homepage = "https://urllib3.readthedocs.io/";
+        homepage = "https://github.com/uiri/toml";
         license = licenses.mit;
-        description = "HTTP library with thread-safe connection pooling, file post, and more.";
+        description = "Python Library for Tom's Obvious, Minimal Language";
       };
     };
 
     "wheel" = python.mkDerivation {
-      name = "wheel-0.33.6";
+      name = "wheel-0.34.2";
       src = pkgs.fetchurl {
-        url = "https://files.pythonhosted.org/packages/59/b0/11710a598e1e148fb7cbf9220fd2a0b82c98e94efbdecb299cb25e7f0b39/wheel-0.33.6.tar.gz";
-        sha256 = "10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646";
+        url = "https://files.pythonhosted.org/packages/75/28/521c6dc7fef23a68368efefdcd682f5b3d1d58c2b90b06dc1d0b805b51ae/wheel-0.34.2.tar.gz";
+        sha256 = "8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96";
 };
       doCheck = commonDoCheck;
       format = "setuptools";
-      buildInputs = commonBuildInputs ++ [ ];
+      buildInputs = commonBuildInputs ++ [
+        self."setuptools"
+      ];
       propagatedBuildInputs = [ ];
       meta = with pkgs.stdenv.lib; {
         homepage = "https://github.com/pypa/wheel";
         license = licenses.mit;
-        description = "A built-package format for Python.";
+        description = "A built-package format for Python";
+      };
+    };
+
+    "zipp" = python.mkDerivation {
+      name = "zipp-3.1.0";
+      src = pkgs.fetchurl {
+        url = "https://files.pythonhosted.org/packages/ce/8c/2c5f7dc1b418f659d36c04dec9446612fc7b45c8095cc7369dd772513055/zipp-3.1.0.tar.gz";
+        sha256 = "c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96";
+};
+      doCheck = commonDoCheck;
+      format = "pyproject";
+      buildInputs = commonBuildInputs ++ [
+        self."setuptools"
+        self."setuptools-scm"
+        self."wheel"
+      ];
+      propagatedBuildInputs = [ ];
+      meta = with pkgs.stdenv.lib; {
+        homepage = "https://github.com/jaraco/zipp";
+        license = licenses.mit;
+        description = "Backport of pathlib-compatible object wrapper for zip files";
       };
     };
   };
   localOverridesFile = ./requirements_override.nix;
   localOverrides = import localOverridesFile { inherit pkgs python; };
   commonOverrides = [
-        (import ../overrides.nix { inherit pkgs python ; })
+        (import (../overrides.nix) { inherit pkgs python ; })
   ];
   paramOverrides = [
     (overrides { inherit pkgs python; })

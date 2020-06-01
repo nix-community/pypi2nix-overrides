@@ -1,5 +1,5 @@
 celery
-django < 3.0
+django
 django-cms
 django-debug-toolbar
 djangorestframework

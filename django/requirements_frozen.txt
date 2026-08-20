@@ -5,7 +5,7 @@ billiard==3.6.3.0
 celery==4.4.3
 Django==3.0.6
 django-classy-tags==1.0.0
-django-cms==3.7.3
+django-cms==5.0.9
 django-debug-toolbar==2.2
 django-formtools==2.2
 django-sekizai==1.1.0
